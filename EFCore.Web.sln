@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Web", "EFCore.Web\EFCore.Web.csproj", "{47C92F5F-ECCA-4BFC-BBA2-4B779BEF39D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Dominio", "EFCore.Dominio\EFCore.Dominio.csproj", "{BCECF116-B1B8-4676-92D4-4C7B94C3D27F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.Repo", "EFCore.Repo\EFCore.Repo.csproj", "{C62FA12F-F9E8-428A-99E9-417BE36D89D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{47C92F5F-ECCA-4BFC-BBA2-4B779BEF39D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47C92F5F-ECCA-4BFC-BBA2-4B779BEF39D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47C92F5F-ECCA-4BFC-BBA2-4B779BEF39D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCECF116-B1B8-4676-92D4-4C7B94C3D27F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCECF116-B1B8-4676-92D4-4C7B94C3D27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCECF116-B1B8-4676-92D4-4C7B94C3D27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCECF116-B1B8-4676-92D4-4C7B94C3D27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62FA12F-F9E8-428A-99E9-417BE36D89D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62FA12F-F9E8-428A-99E9-417BE36D89D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62FA12F-F9E8-428A-99E9-417BE36D89D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C62FA12F-F9E8-428A-99E9-417BE36D89D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
