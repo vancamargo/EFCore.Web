@@ -33,6 +33,7 @@ namespace EFCore.Web
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 }
                  );
+            services.AddScoped<IEFCoreRepository, EFCoreRepositry>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

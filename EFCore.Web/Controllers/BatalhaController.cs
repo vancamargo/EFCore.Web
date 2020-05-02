@@ -14,11 +14,11 @@ namespace EFCore.Web.Controllers
     [ApiController]
     public class BatalhaController : ControllerBase
     {
-        public readonly HeroiContext _context;
+        private readonly IEFCoreRepository _repo;
 
-        public BatalhaController(HeroiContext context)
+        public BatalhaController(IEFCoreRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
         // GET: api/HeroiBatalha
         [HttpGet]
@@ -43,52 +43,68 @@ namespace EFCore.Web.Controllers
 
         // POST: api/HeroiBatalha
         [HttpPost]
-        public ActionResult Post(Batalha model)
+        public async Task<IActionResult> Post(Batalha model)
         {
             try
             {
-
-
-                _context.Batalhas.Add(model);
-                _context.SaveChanges();
-                return Ok("feito");
+                _repo.Add(model);
+               if(await _repo.SaveChangeAsync())
+                {
+                    return Ok("Bazinga");
+                }
+                
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro: {ex}");
             }
+            return BadRequest("Não Salvou");
         }
 
         // PUT: api/HeroiBatalha/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, Batalha model)
-        {
-            try
-            {
+        //public ActionResult Put(int id, Batalha model)
+        //{
+        //    try
+        //    {
 
-                if (_context.
-                    Herois.
-                    AsNoTracking().FirstOrDefault(
-                   h => h.Id == id
-                    ) != null)
-                {
-                    _context.Update(model);
-                    _context.SaveChanges();
-                    return Ok("feito");
-                }
-                return Ok("Não encontrado");
+        //        if (_context.
+        //            Herois.
+        //            AsNoTracking().FirstOrDefault(
+        //           h => h.Id == id
+        //            ) != null)
+        //        {
+        //            _context.Update(model);
+        //            _context.SaveChanges();
+        //            return Ok("feito");
+        //        }
+        //        return Ok("Não encontrado");
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Erro: {ex}");
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"Erro: {ex}");
+        //    }
+        //}
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-    }
+    //    public void Delete(int id)
+    //    {
+    //        try
+    //        {
+    //            _repo.Delete(model);
+    //            if (await _repo.SaveChangeAsync())
+    //            {
+    //                return Ok("Bazinga");
+    //            }
+
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            return BadRequest($"Erro: {ex}");
+    //        }
+    //        return BadRequest("Não Salvou");
+    //    }
+    //}
 }
